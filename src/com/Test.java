@@ -16,6 +16,7 @@ public class Test {
             System.out.println("Enter 3 to Check is queue is empty: ");
             System.out.println("Enter 4 to Check is queue is full: ");
             System.out.println("Enter 5 to clear the queue: ");
+            System.out.println("Enter 6 to show all elements: ");
             System.out.println("Enter 0 to Exit:");
             System.out.println("========================");
             System.out.print("Enter your Choice: ");
@@ -28,7 +29,7 @@ public class Test {
                     System.out.print("Enter Priority: ");
                     int priority = s.nextInt();
                     s.nextLine();
-                    pq.insert(name, priority);
+                    pq.add(name, priority);
                     break;
                 case 2:
                     System.out.println("Size of queue is: "+pq.size());
@@ -40,8 +41,12 @@ public class Test {
                     System.out.println("Is Queue is Full: " + pq.isFull());
                     break;
                 case 5:
-                    System.out.println("Is Queue is Full: " + pq.isFull());
+                    System.out.println("To clear the queue: ");
+                    pq.clear();
                     break;
+                case 6:
+                    System.out.println("List of priority elements are");
+                    pq.show();
             }
         } while (userChoice != 0);
     }

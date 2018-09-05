@@ -35,14 +35,25 @@ public class PriorityQueue {
         return heapSize;
     }
 
-    void insert(String job, int priority){
+    void add(String job, int priority){
         Task newJob = new Task(job, priority);
-        heap[++heapSize] = newJob;
+        heapSize += 1;
+        heap[heapSize] = newJob;
         int pos = heapSize;
         while(pos != 1 && newJob.priority > heap[pos/2].priority) {
             heap[pos] = heap[pos/2];
             pos /= 2;
         }
         heap[pos] = newJob;
+    }
+
+    void show() {
+        System.out.println("Hello world");
+        int pos = heapSize;
+        while(pos != 0) {
+            Task currentJob = heap[pos];
+            System.out.println("job =>" + currentJob.job + " priority =>"+currentJob.priority);
+            pos -= 1;
+        }
     }
 }
